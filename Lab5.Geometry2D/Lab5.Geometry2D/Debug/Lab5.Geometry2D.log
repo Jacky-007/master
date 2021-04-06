@@ -1,0 +1,21 @@
+﻿  geometry.cpp
+D:\master\Lab5.Geometry2D\geometry.cpp(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+D:\master\Lab5.Geometry2D\geometry.cpp(170,9): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+  main.cpp
+D:\master\Lab5.Geometry2D\main.cpp(155,58): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+D:\master\Lab5.Geometry2D\main.cpp(155,51): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+D:\master\Lab5.Geometry2D\main.cpp(171,37): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+D:\master\Lab5.Geometry2D\main.cpp(171,30): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+D:\master\Lab5.Geometry2D\main.cpp(172,37): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+D:\master\Lab5.Geometry2D\main.cpp(172,30): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+D:\master\Lab5.Geometry2D\main.cpp(174,45): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+D:\master\Lab5.Geometry2D\main.cpp(173,45): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+D:\master\Lab5.Geometry2D\main.cpp(182,66): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\master\Lab5.Geometry2D\main.cpp(182,51): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\master\Lab5.Geometry2D\main.cpp(243,75): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+D:\master\Lab5.Geometry2D\main.cpp(290,77): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\master\Lab5.Geometry2D\main.cpp(290,61): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\master\Lab5.Geometry2D\main.cpp(290,45): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\master\Lab5.Geometry2D\main.cpp(290,29): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+  正在生成代码...
+  Lab5.Geometry2D.vcxproj -> D:\master\Lab5.Geometry2D\Lab5.Geometry2D\Debug\Lab5.Geometry2D.exe
