@@ -18,6 +18,15 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\basewin.hpp" />
+    <ClInclude Include="..\geometry.hpp" />
+    <ClInclude Include="..\memdc.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\geometry.cpp" />
+    <ClCompile Include="..\main.cpp" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
@@ -118,7 +127,7 @@
       <ConformanceMode>true</ConformanceMode>
     </ClCompile>
     <Link>
-      <SubSystem>Console</SubSystem>
+      <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
@@ -138,15 +147,6 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClInclude Include="..\basewin.hpp" />
-    <ClInclude Include="..\geometry.hpp" />
-    <ClInclude Include="..\memdc.hpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="..\geometry.cpp" />
-    <ClCompile Include="..\main.cpp" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
