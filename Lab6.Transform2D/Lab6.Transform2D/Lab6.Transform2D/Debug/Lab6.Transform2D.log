@@ -1,0 +1,4 @@
+﻿  main.cpp
+c:\users\summer\desktop\master\lab6.transform2d\main.cpp(199): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+c:\users\summer\desktop\master\lab6.transform2d\main.cpp(278): warning C4305: “参数”: 从“double”到“float”截断
+  Lab6.Transform2D.vcxproj -> C:\Users\summer\Desktop\master\Lab6.Transform2D\Lab6.Transform2D\Debug\Lab6.Transform2D.exe
