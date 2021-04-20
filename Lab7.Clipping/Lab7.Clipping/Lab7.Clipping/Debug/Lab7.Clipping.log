@@ -1,18 +1,7 @@
 ﻿  graphics.cpp
-c:\users\大草原\desktop\master\lab7.clipping\graphics.cpp : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
-c:\users\大草原\desktop\master\lab7.clipping\graphics.cpp(126): warning C4018: “<”: 有符号/无符号不匹配
-c:\users\大草原\desktop\master\lab7.clipping\graphics.cpp(171): warning C4018: “<”: 有符号/无符号不匹配
-c:\users\大草原\desktop\master\lab7.clipping\graphics.cpp(215): error C2086: “std::vector<GEO::Vector2,std::allocator<_Ty>> input_poly”: 重定义
-          with
-          [
-              _Ty=GEO::Vector2
-          ]
-  c:\users\大草原\desktop\master\lab7.clipping\graphics.cpp(125): note: 参见“input_poly”的声明
-c:\users\大草原\desktop\master\lab7.clipping\graphics.cpp(216): warning C4018: “<”: 有符号/无符号不匹配
-c:\users\大草原\desktop\master\lab7.clipping\graphics.cpp(261): error C2086: “std::vector<GEO::Vector2,std::allocator<_Ty>> input_poly”: 重定义
-          with
-          [
-              _Ty=GEO::Vector2
-          ]
-  c:\users\大草原\desktop\master\lab7.clipping\graphics.cpp(125): note: 参见“input_poly”的声明
-c:\users\大草原\desktop\master\lab7.clipping\graphics.cpp(262): warning C4018: “<”: 有符号/无符号不匹配
+c:\users\summer\desktop\master\lab7.clipping\graphics.cpp : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+c:\users\summer\desktop\master\lab7.clipping\graphics.cpp(126): warning C4018: “<”: 有符号/无符号不匹配
+c:\users\summer\desktop\master\lab7.clipping\graphics.cpp(171): warning C4018: “<”: 有符号/无符号不匹配
+c:\users\summer\desktop\master\lab7.clipping\graphics.cpp(216): warning C4018: “<”: 有符号/无符号不匹配
+c:\users\summer\desktop\master\lab7.clipping\graphics.cpp(262): warning C4018: “<”: 有符号/无符号不匹配
+  Lab7.Clipping.vcxproj -> C:\Users\summer\Desktop\master\Lab7.Clipping\Lab7.Clipping\Debug\Lab7.Clipping.exe

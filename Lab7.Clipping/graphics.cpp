@@ -211,8 +211,8 @@ std::vector<Vector2> polygon_clip(const std::vector<Vector2> &poly,
   }
   output_poly = input_poly1;
 
-
-  std::vector<Vector2> input_poly;
+  
+  std::vector<Vector2> input_poly2; //下边界
   for (int i = 0; i < output_poly.size(); i++)
   {		// 每一个顶点
 		//下一个顶点为j = i + 1 or 0 if i == size()
@@ -229,36 +229,36 @@ std::vector<Vector2> polygon_clip(const std::vector<Vector2> &poly,
 	  auto x1 = p1.x(), y1 = p1.y();
 	  auto min_x = clip_min.x(), min_y = clip_min.y();
 	  auto max_x = clip_max.x(), max_y = clip_max.y();
-	  if (((code0 & LEFT) == 0) && ((code1 & LEFT) == 0))
+	  if (((code0 & BOTTOM) == 0) && ((code1 & BOTTOM) == 0))
 	  {
-		  input_poly.push_back(p1);
+		  input_poly2.push_back(p1);
 	  }
-	  else if (((code0 & LEFT) != 0) && ((code1 & LEFT) == 0)) //→
+	  else if (((code0 & BOTTOM) != 0) && ((code1 & BOTTOM) == 0)) //→
 	  {
 		  double x, y;
-		  x = clip_min.x();
-		  y = (int)(y0 + (y1 - y0)*(min_x - x0) / (x1 - x0));
+		  y = clip_max.y();
+		  x = (int)(x0 + (x1 - x0)*(max_y - y0) / (y1 - y0));
 		  Vector2 p;
 		  p = { x,y };
-		  input_poly.push_back(p);
-		  input_poly.push_back(p1);
+		  input_poly2.push_back(p);
+		  input_poly2.push_back(p1);
 	  }
-	  else if (((code0 & LEFT) == 0) && ((code1 & LEFT) != 0)) //←
+	  else if (((code0 & BOTTOM) == 0) && ((code1 & BOTTOM) != 0)) //←
 	  {
 		  double x, y;
-		  x = clip_min.x();
-		  y = (int)(y0 + (y1 - y0)*(min_x - x0) / (x1 - x0));
+		  y = clip_max.y();
+		  x = (int)(x0 + (x1 - x0)*(max_y - y0) / (y1 - y0));
 		  Vector2 p;
 		  p = { x,y };
-		  input_poly.push_back(p);
+		  input_poly2.push_back(p);
 	  }
 
   }
-  output_poly = input_poly;
+  output_poly = input_poly2;
 
 
 
-  std::vector<Vector2> input_poly;
+  std::vector<Vector2> input_poly3; //上边界
   for (int i = 0; i < output_poly.size(); i++)
   {		// 每一个顶点
 		//下一个顶点为j = i + 1 or 0 if i == size()
@@ -275,34 +275,35 @@ std::vector<Vector2> polygon_clip(const std::vector<Vector2> &poly,
 	  auto x1 = p1.x(), y1 = p1.y();
 	  auto min_x = clip_min.x(), min_y = clip_min.y();
 	  auto max_x = clip_max.x(), max_y = clip_max.y();
-	  if (((code0 & LEFT) == 0) && ((code1 & LEFT) == 0))
+	  if (((code0 & TOP) == 0) && ((code1 & TOP) == 0))
 	  {
-		  input_poly.push_back(p1);
+		  input_poly3.push_back(p1);
 	  }
-	  else if (((code0 & LEFT) != 0) && ((code1 & LEFT) == 0)) //→
+	  else if (((code0 & TOP) != 0) && ((code1 & TOP) == 0)) //→
 	  {
+
 		  double x, y;
-		  x = clip_min.x();
-		  y = (int)(y0 + (y1 - y0)*(min_x - x0) / (x1 - x0));
+		  y = clip_min.y();
+		  x = (int)(x0 + (x1 - x0)*(min_y - y0) / (y1 - y0));
 		  Vector2 p;
 		  p = { x,y };
-		  input_poly.push_back(p);
-		  input_poly.push_back(p1);
+		  input_poly3.push_back(p);
+		  input_poly3.push_back(p1);
 	  }
-	  else if (((code0 & LEFT) == 0) && ((code1 & LEFT) != 0)) //←
+	  else if (((code0 & TOP) == 0) && ((code1 & TOP) != 0)) //←
 	  {
 		  double x, y;
-		  x = clip_min.x();
-		  y = (int)(y0 + (y1 - y0)*(min_x - x0) / (x1 - x0));
+		  y = clip_min.y();
+		  x = (int)(x0 + (x1 - x0)*(min_y - y0) / (y1 - y0));
 		  Vector2 p;
 		  p = { x,y };
-		  input_poly.push_back(p);
+		  input_poly3.push_back(p);
 	  }
 
   }
-  output_poly = input_poly;
+  output_poly = input_poly3;
 
-
+  
   return output_poly;
 }
 
