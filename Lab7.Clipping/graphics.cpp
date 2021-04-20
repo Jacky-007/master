@@ -106,6 +106,7 @@ bool line_clip_CohenSutherland(Vector2 &p0, Vector2 &p1,
  * make a turn left. You can use it to conveniently judge whether the point is
  * in the box.
  */
+
 std::vector<Vector2> polygon_clip(const std::vector<Vector2> &poly,
                                   const Vector2 &clip_min,
                                   const Vector2 &clip_max) {
@@ -117,20 +118,191 @@ std::vector<Vector2> polygon_clip(const std::vector<Vector2> &poly,
   auto output_poly = poly;
 
 
-    // Write you code here
+  // Write you code here
 
-  auto input_poly = output_poly;
-  for (int i = 0; i < input_poly.size(); i++) { // 每一个顶点
+  //修改的是inputpoly
+  //auto input_poly = output_poly;
+  std::vector<Vector2> input_poly;
+  for (int i = 0; i < output_poly.size(); i++) 
+  {		// 每一个顶点
 		//下一个顶点为j = i + 1 or 0 if i == size()
 		//判断四种情况，并输出响应点到output
 	  int j;
-	  if (i == output_poly.size) j = 0;
+	  if (i == (output_poly.size()-1)) j = 0;
 	  else j = i + 1;
-	  OutCode code0 = calc_OutCode(input_poly[i], clip_min, clip_max);
-	  OutCode code1 = calc_OutCode(input_poly[j], clip_min, clip_max);
-	  if (code0 | code1)
+	  Vector2 p0, p1;
+	  p0 = output_poly[i];
+	  p1 = output_poly[j];
+	  OutCode code0 = calc_OutCode(p0, clip_min, clip_max);
+	  OutCode code1 = calc_OutCode(p1, clip_min, clip_max);
+	  auto x0 = p0.x(), y0 = p0.y();
+	  auto x1 = p1.x(), y1 = p1.y();
+	  auto min_x = clip_min.x(), min_y = clip_min.y();
+	  auto max_x = clip_max.x(), max_y = clip_max.y();
+	  if (((code0 & LEFT) == 0) && ((code1 & LEFT) == 0)) //都在里面
+	  {
+		  input_poly.push_back(p1);
+	  }
+	  else if (((code0 & LEFT) != 0) && ((code1 & LEFT) == 0)) //→
+	  {
+		  double x, y;
+		  x = clip_min.x();
+		  y = (int)(y0 + (y1 - y0)*(min_x - x0) / (x1 - x0));
+		  Vector2 p;
+		  p = {x,y};
+		  input_poly.push_back(p);
+		  input_poly.push_back(p1);
+	  }
+	  else if (((code0 & LEFT) == 0) && ((code1 & LEFT) != 0)) //←
+	  {
+		  double x, y;
+		  x = clip_min.x();
+		  y = (int)(y0 + (y1 - y0)*(min_x - x0) / (x1 - x0));
+		  Vector2 p;
+		  p = {x,y};
+		  input_poly.push_back(p);
+	  }
+	  
   }
-output_poly = input_poly;
+  output_poly = input_poly;
+
+
+  std::vector<Vector2> input_poly1; //右边界
+  for (int i = 0; i < output_poly.size(); i++)
+  {		// 每一个顶点
+		//下一个顶点为j = i + 1 or 0 if i == size()
+		//判断四种情况，并输出响应点到output
+	  int j;
+	  if (i == (output_poly.size() - 1)) j = 0;
+	  else j = i + 1;
+	  Vector2 p0, p1;
+	  p0 = output_poly[i];
+	  p1 = output_poly[j];
+	  OutCode code0 = calc_OutCode(p0, clip_min, clip_max);
+	  OutCode code1 = calc_OutCode(p1, clip_min, clip_max);
+	  auto x0 = p0.x(), y0 = p0.y();
+	  auto x1 = p1.x(), y1 = p1.y();
+	  auto min_x = clip_min.x(), min_y = clip_min.y();
+	  auto max_x = clip_max.x(), max_y = clip_max.y();
+	  if (((code0 & RIGHT) == 0) && ((code1 & RIGHT) == 0))
+	  {
+		  input_poly1.push_back(p1);
+	  }
+	  else if (((code0 & RIGHT) != 0) && ((code1 & RIGHT) == 0)) //→
+	  {
+		  double x, y;
+		  x = clip_max.x();
+		  y = (int)(y0 + (y1 - y0)*(max_x - x0) / (x1 - x0));
+		  Vector2 p;
+		  p = { x,y };
+		  input_poly1.push_back(p);
+		  input_poly1.push_back(p1);
+	  }
+	  else if (((code0 & RIGHT) == 0) && ((code1 & RIGHT) != 0)) //←
+	  {
+		  double x, y;
+		  x = clip_max.x();
+		  y = (int)(y0 + (y1 - y0)*(max_x - x0) / (x1 - x0));
+		  Vector2 p;
+		  p = { x,y };
+		  input_poly1.push_back(p);
+	  }
+
+  }
+  output_poly = input_poly1;
+
+
+  std::vector<Vector2> input_poly;
+  for (int i = 0; i < output_poly.size(); i++)
+  {		// 每一个顶点
+		//下一个顶点为j = i + 1 or 0 if i == size()
+		//判断四种情况，并输出响应点到output
+	  int j;
+	  if (i == (output_poly.size() - 1)) j = 0;
+	  else j = i + 1;
+	  Vector2 p0, p1;
+	  p0 = output_poly[i];
+	  p1 = output_poly[j];
+	  OutCode code0 = calc_OutCode(p0, clip_min, clip_max);
+	  OutCode code1 = calc_OutCode(p1, clip_min, clip_max);
+	  auto x0 = p0.x(), y0 = p0.y();
+	  auto x1 = p1.x(), y1 = p1.y();
+	  auto min_x = clip_min.x(), min_y = clip_min.y();
+	  auto max_x = clip_max.x(), max_y = clip_max.y();
+	  if (((code0 & LEFT) == 0) && ((code1 & LEFT) == 0))
+	  {
+		  input_poly.push_back(p1);
+	  }
+	  else if (((code0 & LEFT) != 0) && ((code1 & LEFT) == 0)) //→
+	  {
+		  double x, y;
+		  x = clip_min.x();
+		  y = (int)(y0 + (y1 - y0)*(min_x - x0) / (x1 - x0));
+		  Vector2 p;
+		  p = { x,y };
+		  input_poly.push_back(p);
+		  input_poly.push_back(p1);
+	  }
+	  else if (((code0 & LEFT) == 0) && ((code1 & LEFT) != 0)) //←
+	  {
+		  double x, y;
+		  x = clip_min.x();
+		  y = (int)(y0 + (y1 - y0)*(min_x - x0) / (x1 - x0));
+		  Vector2 p;
+		  p = { x,y };
+		  input_poly.push_back(p);
+	  }
+
+  }
+  output_poly = input_poly;
+
+
+
+  std::vector<Vector2> input_poly;
+  for (int i = 0; i < output_poly.size(); i++)
+  {		// 每一个顶点
+		//下一个顶点为j = i + 1 or 0 if i == size()
+		//判断四种情况，并输出响应点到output
+	  int j;
+	  if (i == (output_poly.size() - 1)) j = 0;
+	  else j = i + 1;
+	  Vector2 p0, p1;
+	  p0 = output_poly[i];
+	  p1 = output_poly[j];
+	  OutCode code0 = calc_OutCode(p0, clip_min, clip_max);
+	  OutCode code1 = calc_OutCode(p1, clip_min, clip_max);
+	  auto x0 = p0.x(), y0 = p0.y();
+	  auto x1 = p1.x(), y1 = p1.y();
+	  auto min_x = clip_min.x(), min_y = clip_min.y();
+	  auto max_x = clip_max.x(), max_y = clip_max.y();
+	  if (((code0 & LEFT) == 0) && ((code1 & LEFT) == 0))
+	  {
+		  input_poly.push_back(p1);
+	  }
+	  else if (((code0 & LEFT) != 0) && ((code1 & LEFT) == 0)) //→
+	  {
+		  double x, y;
+		  x = clip_min.x();
+		  y = (int)(y0 + (y1 - y0)*(min_x - x0) / (x1 - x0));
+		  Vector2 p;
+		  p = { x,y };
+		  input_poly.push_back(p);
+		  input_poly.push_back(p1);
+	  }
+	  else if (((code0 & LEFT) == 0) && ((code1 & LEFT) != 0)) //←
+	  {
+		  double x, y;
+		  x = clip_min.x();
+		  y = (int)(y0 + (y1 - y0)*(min_x - x0) / (x1 - x0));
+		  Vector2 p;
+		  p = { x,y };
+		  input_poly.push_back(p);
+	  }
+
+  }
+  output_poly = input_poly;
+
+
   return output_poly;
 }
 

@@ -1,79 +1,18 @@
 ﻿  graphics.cpp
-c:\users\summer\desktop\master\lab7.clipping\graphics.cpp : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
-c:\users\summer\desktop\master\lab7.clipping\graphics.cpp(123): warning C4018: “<”: 有符号/无符号不匹配
-c:\users\summer\desktop\master\lab7.clipping\graphics.cpp(127): error C3867: “std::vector<GEO::Vector2,std::allocator<_Ty>>::size”: 非标准语法；请使用 "&" 来创建指向成员的指针
+c:\users\大草原\desktop\master\lab7.clipping\graphics.cpp : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+c:\users\大草原\desktop\master\lab7.clipping\graphics.cpp(126): warning C4018: “<”: 有符号/无符号不匹配
+c:\users\大草原\desktop\master\lab7.clipping\graphics.cpp(171): warning C4018: “<”: 有符号/无符号不匹配
+c:\users\大草原\desktop\master\lab7.clipping\graphics.cpp(215): error C2086: “std::vector<GEO::Vector2,std::allocator<_Ty>> input_poly”: 重定义
           with
           [
               _Ty=GEO::Vector2
           ]
-c:\users\summer\desktop\master\lab7.clipping\graphics.cpp(127): error C2446: “==”: 没有从“unsigned int (__thiscall std::vector<GEO::Vector2,std::allocator<_Ty>>::* )(void) noexcept const”到“int”的转换
+  c:\users\大草原\desktop\master\lab7.clipping\graphics.cpp(125): note: 参见“input_poly”的声明
+c:\users\大草原\desktop\master\lab7.clipping\graphics.cpp(216): warning C4018: “<”: 有符号/无符号不匹配
+c:\users\大草原\desktop\master\lab7.clipping\graphics.cpp(261): error C2086: “std::vector<GEO::Vector2,std::allocator<_Ty>> input_poly”: 重定义
           with
           [
               _Ty=GEO::Vector2
           ]
-  c:\users\summer\desktop\master\lab7.clipping\graphics.cpp(127): note: 没有使该转换得以执行的上下文
-c:\users\summer\desktop\master\lab7.clipping\graphics.cpp(132): error C2059: 语法错误:“}”
-  main.cpp
-c:\users\summer\desktop\master\lab7.clipping\main.cpp(222): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
-c:\users\summer\desktop\master\lab7.clipping\main.cpp(271): warning C4244: “参数”: 从“T”转换到“int”，可能丢失数据
-          with
-          [
-              T=double
-          ]
-c:\users\summer\desktop\master\lab7.clipping\main.cpp(270): warning C4244: “参数”: 从“T”转换到“int”，可能丢失数据
-          with
-          [
-              T=double
-          ]
-c:\users\summer\desktop\master\lab7.clipping\main.cpp(316): warning C4838: 从“int”转换到“T”需要收缩转换
-          with
-          [
-              T=double
-          ]
-c:\users\summer\desktop\master\lab7.clipping\main.cpp(316): warning C4838: 从“LONG”转换到“T”需要收缩转换
-          with
-          [
-              T=double
-          ]
-c:\users\summer\desktop\master\lab7.clipping\main.cpp(317): warning C4838: 从“LONG”转换到“T”需要收缩转换
-          with
-          [
-              T=double
-          ]
-c:\users\summer\desktop\master\lab7.clipping\main.cpp(322): warning C4838: 从“LONG”转换到“T”需要收缩转换
-          with
-          [
-              T=double
-          ]
-c:\users\summer\desktop\master\lab7.clipping\main.cpp(322): warning C4838: 从“int”转换到“T”需要收缩转换
-          with
-          [
-              T=double
-          ]
-c:\users\summer\desktop\master\lab7.clipping\main.cpp(323): warning C4838: 从“LONG”转换到“T”需要收缩转换
-          with
-          [
-              T=double
-          ]
-c:\users\summer\desktop\master\lab7.clipping\main.cpp(367): warning C4244: “参数”: 从“T”转换到“float”，可能丢失数据
-          with
-          [
-              T=double
-          ]
-c:\users\summer\desktop\master\lab7.clipping\main.cpp(370): warning C4244: “参数”: 从“T”转换到“float”，可能丢失数据
-          with
-          [
-              T=double
-          ]
-c:\users\summer\desktop\master\lab7.clipping\graphics.hpp(27): warning C4018: “<”: 有符号/无符号不匹配
-  c:\users\summer\desktop\master\lab7.clipping\main.cpp(279): note: 参见对正在编译的函数 模板 实例化“void draw_polygon<GEO::Vector2>(std::vector<GEO::Vector2,std::allocator<_Ty>> &,std::vector<std::pair<int,int>,std::allocator<std::pair<int,int>>> &)”的引用
-          with
-          [
-              _Ty=GEO::Vector2
-          ]
-c:\users\summer\desktop\master\lab7.clipping\graphics.hpp(29): warning C4244: “参数”: 从“T”转换到“int”，可能丢失数据
-          with
-          [
-              T=double
-          ]
-  正在生成代码...
+  c:\users\大草原\desktop\master\lab7.clipping\graphics.cpp(125): note: 参见“input_poly”的声明
+c:\users\大草原\desktop\master\lab7.clipping\graphics.cpp(262): warning C4018: “<”: 有符号/无符号不匹配
