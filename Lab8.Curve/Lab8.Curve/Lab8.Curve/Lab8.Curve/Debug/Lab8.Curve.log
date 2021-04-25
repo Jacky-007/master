@@ -1,0 +1,17 @@
+﻿  graphics.cpp
+c:\users\summer\desktop\master\lab8.curve\lab8.curve\graphics.cpp(218): warning C4244: “参数”: 从“T”转换到“int”，可能丢失数据
+          with
+          [
+              T=double
+          ]
+c:\users\summer\desktop\master\lab8.curve\lab8.curve\graphics.cpp(217): warning C4244: “参数”: 从“T”转换到“int”，可能丢失数据
+          with
+          [
+              T=double
+          ]
+c:\users\summer\desktop\master\lab8.curve\lab8.curve\graphics.cpp(229): warning C4244: “参数”: 从“T”转换到“int”，可能丢失数据
+          with
+          [
+              T=double
+          ]
+  Lab8.Curve.vcxproj -> C:\Users\summer\Desktop\master\Lab8.Curve\Lab8.Curve\Lab8.Curve\Debug\Lab8.Curve.exe
