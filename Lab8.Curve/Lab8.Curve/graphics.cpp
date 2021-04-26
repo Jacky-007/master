@@ -210,34 +210,29 @@ void draw_bezier(const std::vector<Vector2> &control_points,
 	void draw_line(int src_x, int src_y, int dst_x, int dst_y,
 	std::vector<std::pair<int, int>> &buffer)
 */
-	//C(n,m) = n!/((n-m)! * m!)
-	int num = control_points.size();
-	if (num == 2)
-	{
-		draw_line(control_points[0].x(), control_points[0].y(), 
-			control_points[1].x(), control_points[1].y(), 
-			buffer);
-	}
-	else
-	{
-		for (int i = 0; i < num; i++)
-		{
-			for (double t = 0; t <= 1; t += 0.01)
-			{
-				Vector2 res1 = (control_points[i] * pow((1 - t), num - i) * pow(t, i) * comb(num, i));
-				Vector2 res2 = res1;
-				 draw_line(res2.x(),res2.y(),res1.x(),res1.y(),buffer);
-			}
-		}	
-	}
-
-        /*
-				 draw_line((control_points[i] * pow((1 - t), num - i) * pow(t, i) * comb(num, i)).x(), 
-					 (control_points[i] * pow((1 - t), num - i) * pow(t, i) * comb(num, i)).y(), 
-					 (control_points[i+1] * pow((1 - t), num - i - 1) * pow(t, i+1) * comb(num, i+1)).x(), 
-					 (control_points[i+1] * pow((1 - t), num - i - 1) * pow(t, i+1) * comb(num, i+1)).y(), 
-					 buffer);
-        */
     // calculate the Bezier curve
     // and use draw_line to draw the curve
+    
+    int size = control_points.size();
+    Vector2 control_init = control_points[0];
+    Vector2 controls[100];
+    
+    for(double t=0; t<1; t+=0.01)
+    {
+        for(int j=0; j<size; j++)
+        {
+            for(int k=j; k< size; k++)
+            {
+                if(j == 0)
+                    controls[k] = control_points[k];
+                else
+                {
+                    controls[k].x() = t * control_points[k].x() + (1-t) * controls[k-1].x();
+                    controls[k].y() = t * control_points[k].y() + (1-t) * controls[k-1].y();
+                }
+            }
+        }
+        draw_line(control_init.x(),control_init.y(),controls[size-1].x(),controls[size-1].y(),buffer);
+        control_init = controls[size-1];
+    }
 }

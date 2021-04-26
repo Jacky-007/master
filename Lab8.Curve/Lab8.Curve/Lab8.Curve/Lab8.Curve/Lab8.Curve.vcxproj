@@ -18,6 +18,17 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\geometry.cpp" />
+    <ClCompile Include="..\..\graphics.cpp" />
+    <ClCompile Include="..\..\main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\basewin.hpp" />
+    <ClInclude Include="..\..\geometry.hpp" />
+    <ClInclude Include="..\..\graphics.hpp" />
+    <ClInclude Include="..\..\memdc.hpp" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
     <ProjectGuid>{790F10EA-4CE2-4570-BF04-E77C55D4EFDF}</ProjectGuid>
@@ -122,17 +133,6 @@
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClInclude Include="..\..\basewin.hpp" />
-    <ClInclude Include="..\..\geometry.hpp" />
-    <ClInclude Include="..\..\graphics.hpp" />
-    <ClInclude Include="..\..\memdc.hpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="..\..\geometry.cpp" />
-    <ClCompile Include="..\..\graphics.cpp" />
-    <ClCompile Include="..\..\main.cpp" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
