@@ -1,0 +1,5 @@
+﻿  main.cpp
+C:\Users\summer\Desktop\master\Lab9.HelloDirectX11-simple\main.cpp(340): warning C4305: “+=”: 从“double”到“float”截断
+C:\Users\summer\Desktop\master\Lab9.HelloDirectX11-simple\main.cpp(341): warning C4305: “+=”: 从“double”到“float”截断
+C:\Users\summer\Desktop\master\Lab9.HelloDirectX11-simple\main.cpp(342): warning C4305: “+=”: 从“double”到“float”截断
+  HelloDirectX11-simple.vcxproj -> C:\Users\summer\Desktop\master\Lab9.HelloDirectX11-simple\Debug\HelloDirectX11-simple.exe

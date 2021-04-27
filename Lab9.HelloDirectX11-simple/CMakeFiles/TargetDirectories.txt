@@ -1,0 +1,3 @@
+C:/Users/summer/Desktop/master/Lab9.HelloDirectX11-simple/CMakeFiles/HelloDirectX11-simple.dir
+C:/Users/summer/Desktop/master/Lab9.HelloDirectX11-simple/CMakeFiles/ALL_BUILD.dir
+C:/Users/summer/Desktop/master/Lab9.HelloDirectX11-simple/CMakeFiles/ZERO_CHECK.dir
