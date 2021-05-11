@@ -1,0 +1,3 @@
+C:/Users/summer/Desktop/master/Lab10.Lighting/CMakeFiles/Lighting.dir
+C:/Users/summer/Desktop/master/Lab10.Lighting/CMakeFiles/ALL_BUILD.dir
+C:/Users/summer/Desktop/master/Lab10.Lighting/CMakeFiles/ZERO_CHECK.dir
