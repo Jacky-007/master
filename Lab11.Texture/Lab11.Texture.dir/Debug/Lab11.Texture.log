@@ -1,0 +1,4 @@
+﻿  main.cpp
+C:\Users\summer\Desktop\master\Lab11.Texture\main.cpp(315): warning C4244: “初始化”: 从“ULONGLONG”转换到“DWORD”，可能丢失数据
+C:\Users\summer\Desktop\master\Lab11.Texture\main.cpp(418): warning C4244: “初始化”: 从“ULONGLONG”转换到“DWORD”，可能丢失数据
+  Lab11.Texture.vcxproj -> C:\Users\summer\Desktop\master\Lab11.Texture\Debug\Lab11.Texture.exe

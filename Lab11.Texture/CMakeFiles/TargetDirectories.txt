@@ -1,0 +1,3 @@
+C:/Users/summer/Desktop/master/Lab11.Texture/CMakeFiles/Lab11.Texture.dir
+C:/Users/summer/Desktop/master/Lab11.Texture/CMakeFiles/ALL_BUILD.dir
+C:/Users/summer/Desktop/master/Lab11.Texture/CMakeFiles/ZERO_CHECK.dir
