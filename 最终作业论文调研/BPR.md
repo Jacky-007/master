@@ -46,6 +46,10 @@ Xu K ,  Xu Y ,  Min H , et al. Improving Item Ranking by Leveraging Dual Roles I
 **作者认为用户选择某一个物品不仅仅会受自己信任的人所影响，也会受信任自己的人所影响**，所以这两点因素都应该要被考虑进去。
 
 **方法：**
+* * u prefers her observed item i to any of her trustee’s observed item k;
+  * u prefers her observed item i to any of her truster’s observed item s;
+  * u prefers her trustee’s observed item k over item j that neither herself nor her trusters/trustees observed.
+  * $X_(u,i)≥ X_(u,k) , X_(u,i)≥ X_(u,s) , X_(u,k)≥ X_(u,j)$
 
 1、用户更加倾向于自己喜欢的物品而不是信任他的人喜欢的物品；2、用户更加倾向于自己喜欢的物品而不是他信任的人喜欢的物品；3、用户更加倾向于他信任的人喜欢的物品而不是自己、他信任、信任他的人都不喜欢的物品。
 
@@ -60,6 +64,10 @@ Yangjun, Ke, Cai, et al. Leveraging Distrust Relations to Improve Bayesian Perso
 **在以往的算法中往往都只考虑了利用信任信息，比如前一篇文章BPRDR，而没有人利用过用户之间的不信任信息**。而事实上，利用这一块信息也是至关重要的，利用用户之间的不信任信息可以帮助用户排除掉用户不信任的人喜欢的物品。
 
 **方法：**
+
+![image-20210604172908822](.assets/image-20210604172908822.png)
+
+* <img src=".assets/image-20210604155434064-1622793275494.png" alt="image-20210604155434064" style="zoom:50%;" />
 
 * 作者把物品分为了四种类型，分别是：1、Positive feedback，这一类物品是用户有过用户行为的物品；2、Trust feedback，这一类物品是用户没有过用户行为的物品，但是至少有他的一个信任者对该物品有过用户行为；3、Distrust feedback，这一类物品是用户和用户信任者都没有过用户行为的物品，但是至少有一个用户的不信任者对其有过用户行为的物品；4、Neutral feedback，这一类物品是用户和用户信任的人以及用户不信任的人都没有过用户行为的物品；
 * 作者提出了以下三个猜想：1、用户更加倾向于喜欢有过Positive feedback的东西而不是有过Trust feedback的东西；2、用户更加倾向于喜欢有过Trust feedback的东西而不是有过Neutral feedback的东西；3、用户更加倾向于喜欢有过Trust feedback而不是有过Distrust feedback的东西；
