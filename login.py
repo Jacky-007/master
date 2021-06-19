@@ -1,3 +1,13 @@
+from tkinter import *
+from tkinter import ttk
+from tkinter import messagebox
+import inspect
+import ctypes
+import pymysql
+from tkinter.scrolledtext import ScrolledText
+
+import func
+from func import *
 class App:
     def __init__(self):
         self.username = "root"
@@ -10,7 +20,8 @@ class App:
         self.login()
         self.run()
 
-    def login(self):
+  
+  def login(self):
         f = ttk.Frame(self.win)
         f.place(x=20, y=60, width=480, height=230)
         Label(f, text="登陆本科生信息管理系统：",font=("楷体", 16, "bold")).place(x=10, y=0)
