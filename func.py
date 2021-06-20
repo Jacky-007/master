@@ -40,7 +40,7 @@ class App:
         f.place(x=20, y=70, width=480, height=230)
         Label(f, text="添加学生信息：", font=("宋体", 16, "bold")).place(x=10, y=0)
 
-        ttk.Label(f, text="学号：").place(x=10, y=40, height=25)
+        ttk.Label(f, text="学号：",background="#708090").place(x=10, y=40, height=25)
         s_num = ttk.Entry(f)
         s_num.place(x=50, y=40, width=100, height=25)
 
