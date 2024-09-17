@@ -1,0 +1,16 @@
+json_string ="""
+{name: USA, 
+ province: 
+ [
+    { name: "Washington", 
+      cities:{
+        city :["Seattle","Olympia"]
+               }
+     },
+     { name:"California",
+       cities:{
+         city:["San Francisco","Los Angeles","Berkeley"]
+               }
+     }
+   ]
+}"""
